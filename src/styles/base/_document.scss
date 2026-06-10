@@ -1,0 +1,34 @@
+body {
+  background:
+    radial-gradient(circle at 50% 0%, rgb(255 255 255 / 36%), transparent 42rem),
+    linear-gradient(180deg, rgb(229 236 241 / 96%), rgb(217 226 232 / 96%)),
+    var(--bg-base);
+  color: var(--ink);
+  cursor: crosshair;
+  font-family: var(--font-display);
+  font-weight: 300;
+  line-height: 1.6;
+  overflow-x: hidden;
+  position: relative;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+::selection {
+  background: rgb(248 205 230 / 72%);
+}
+
+.sr-only {
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}

@@ -1,0 +1,159 @@
+.bg-mesh {
+  background:
+    radial-gradient(circle at 48% 30%, rgb(255 255 255 / 26%) 0%, transparent 35rem),
+    radial-gradient(circle at 15% 21%, rgb(61 134 164 / 11%) 0%, transparent 28rem),
+    radial-gradient(circle at 85% 68%, rgb(112 96 167 / 10%) 0%, transparent 31rem),
+    radial-gradient(circle at 55% 86%, rgb(154 126 48 / 7%) 0%, transparent 26rem),
+    linear-gradient(180deg, rgb(255 255 255 / 13%), transparent 48%);
+  height: 100vh;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
+}
+
+.bg-mesh::before {
+  background-image:
+    linear-gradient(rgb(61 57 64 / 2.6%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(61 57 64 / 2.6%) 1px, transparent 1px);
+  background-size: 84px 84px;
+  content: '';
+  inset: 0;
+  opacity: 0.42;
+  position: absolute;
+}
+
+.bg-grain {
+  background-image:
+    radial-gradient(circle at 20% 30%, rgb(61 57 64 / 6%) 0 1px, transparent 1px),
+    radial-gradient(circle at 70% 80%, rgb(255 255 255 / 48%) 0 1px, transparent 1px);
+  background-size: 31px 37px, 43px 47px;
+  inset: 0;
+  mix-blend-mode: multiply;
+  opacity: 0.18;
+  position: absolute;
+}
+
+.geo-lines,
+.intro-geo-lines {
+  height: 100%;
+  inset: 0;
+  opacity: 0.66;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+
+.geo-lines {
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 24%,
+    rgb(0 0 0 / 82%) 38%,
+    rgb(0 0 0 / 74%) 70%,
+    #000 88%,
+    #000 100%
+  );
+  opacity: 0.92;
+  transform-origin: 50% 50%;
+}
+
+.intro-geo-lines {
+  opacity: 0.48;
+}
+
+.mesh-poly {
+  fill: transparent;
+  stroke-linejoin: round;
+  stroke-width: 2.05px;
+  transform-box: fill-box;
+  transform-origin: center;
+  vector-effect: non-scaling-stroke;
+}
+
+.mesh-1 {
+  animation: drift-a 30s -2s infinite alternate ease-in-out;
+  fill: rgb(80 176 214 / 2.8%);
+  stroke: rgb(80 176 214 / 58%);
+  stroke-width: 1.75px;
+}
+
+.mesh-2 {
+  animation: drift-b 38s -11s infinite alternate ease-in-out;
+  fill: rgb(162 136 222 / 3.5%);
+  stroke: rgb(162 136 222 / 68%);
+}
+
+.mesh-3 {
+  animation: drift-center-a 38s -17s infinite alternate ease-in-out;
+  fill: rgb(222 128 181 / 3.2%);
+  stroke: rgb(222 128 181 / 68%);
+}
+
+.mesh-4 {
+  animation: drift-center-b 44s -23s infinite alternate ease-in-out;
+  fill: rgb(91 188 150 / 3.2%);
+  stroke: rgb(91 188 150 / 66%);
+}
+
+.mesh-5 {
+  animation: drift-e 36s -13s infinite alternate ease-in-out;
+  fill: rgb(200 158 54 / 2.7%);
+  stroke: rgb(200 158 54 / 66%);
+}
+
+.mesh-6 {
+  animation: drift-f 31s -7s infinite alternate ease-in-out;
+  fill: rgb(92 184 222 / 2.8%);
+  stroke: rgb(92 184 222 / 66%);
+}
+
+.mesh-7 {
+  animation: drift-g 45s -19s infinite alternate ease-in-out;
+  fill: rgb(170 150 226 / 2.8%);
+  stroke: rgb(170 150 226 / 62%);
+}
+
+.mesh-8 {
+  animation: drift-h 33s -27s infinite alternate ease-in-out;
+  fill: rgb(226 137 188 / 2.8%);
+  stroke: rgb(226 137 188 / 62%);
+}
+
+.mesh-9 {
+  animation: drift-center-a 34s -9s infinite alternate ease-in-out;
+  fill: rgb(91 196 190 / 3.4%);
+  stroke: rgb(91 196 190 / 62%);
+}
+
+.mesh-10 {
+  animation: drift-j 40s -24s infinite alternate ease-in-out;
+  fill: rgb(204 166 62 / 2.6%);
+  stroke: rgb(204 166 62 / 62%);
+}
+
+.mesh-11 {
+  animation: drift-e 32s -16s infinite alternate ease-in-out;
+  fill: rgb(105 181 226 / 2.6%);
+  stroke: rgb(105 181 226 / 60%);
+}
+
+.mesh-12 {
+  animation: drift-center-b 36s -6s infinite alternate ease-in-out;
+  fill: rgb(226 128 184 / 3%);
+  stroke: rgb(226 128 184 / 60%);
+}
+
+.mesh-13 {
+  animation: drift-c 37s -21s infinite alternate ease-in-out;
+  fill: rgb(164 142 224 / 2.6%);
+  stroke: rgb(164 142 224 / 58%);
+}
+
+.mesh-14 {
+  animation: drift-h 35s -12s infinite alternate ease-in-out;
+  fill: rgb(91 188 150 / 2.6%);
+  stroke: rgb(91 188 150 / 58%);
+}

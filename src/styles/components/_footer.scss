@@ -1,0 +1,39 @@
+.cyrene-corner {
+  bottom: 0;
+  display: flex;
+  justify-content: flex-end;
+  pointer-events: none;
+  position: fixed;
+  right: 0;
+  z-index: 70;
+}
+
+.cyrene-corner img {
+  display: block;
+  filter: drop-shadow(-18px 20px 32px rgb(61 57 64 / 12%));
+  height: auto;
+  max-width: min(18vw, 13.5rem);
+  transform: translate(9%, 7%);
+  user-select: none;
+}
+
+footer {
+  align-items: center;
+  color: var(--ink-light);
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  justify-content: flex-end;
+  min-height: clamp(5.5rem, 12vh, 7.25rem);
+  overflow: hidden;
+  padding: 1.25rem 2rem 1.75rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.footer-sub {
+  margin-top: 0.35rem;
+  opacity: 0.5;
+}

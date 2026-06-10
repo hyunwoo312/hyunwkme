@@ -1,0 +1,21 @@
+.symbols {
+  display: none;
+}
+
+.symbol {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.symbol-clover {
+  fill: var(--jelly-blue);
+  height: 16px;
+  width: 16px;
+}
+
+.symbol-star {
+  fill: var(--star-gold);
+  height: 12px;
+  width: 12px;
+}
+

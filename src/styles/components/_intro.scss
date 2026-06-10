@@ -1,0 +1,151 @@
+.intro-screen {
+  align-items: center;
+  animation: intro-out 0.55s cubic-bezier(0.16, 1, 0.3, 1) 2.65s forwards;
+  background:
+    radial-gradient(circle at 50% 0%, rgb(255 255 255 / 62%) 0%, transparent 68%),
+    linear-gradient(180deg, rgb(232 237 241), rgb(224 230 235));
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  overflow: hidden;
+  pointer-events: none;
+  position: fixed;
+  z-index: 9999;
+}
+
+.intro-mesh {
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.intro-content {
+  align-items: center;
+  animation: intro-content-out 0.55s cubic-bezier(0.16, 1, 0.3, 1) 2.55s forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  position: relative;
+  z-index: 1;
+}
+
+.intro-version {
+  animation: intro-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.05s forwards;
+  color: rgb(90 86 93 / 74%);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  opacity: 0;
+}
+
+.intro-logo {
+  display: inline-flex;
+  justify-content: center;
+  order: -1;
+  padding: 0.15em 0.12em 0.18em 0;
+  min-height: 1.6em;
+  min-width: 10.8em;
+}
+
+.intro-cursor {
+  animation:
+    intro-caret-blink 0.72s steps(1, end) 0.15s infinite,
+    intro-caret-out 0.22s ease 0.95s forwards;
+  align-self: center;
+  background: linear-gradient(180deg, var(--jelly-blue), var(--jelly-purple));
+  border-radius: 999px;
+  height: 1.18em;
+  margin-left: 0.08em;
+  opacity: 0.8;
+  width: 1px;
+}
+
+.intro-logo-letter {
+  color: var(--ink);
+  display: inline-block;
+  font-size: clamp(1.2rem, 3.2vw, 1.5rem);
+  font-weight: 200;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.intro-logo-letter.is-space {
+  width: 0.5em;
+}
+
+.intro-logo-letter.is-accent {
+  background: linear-gradient(45deg, #7abadd, #e4a1c9, #a38dd6);
+  background-clip: text;
+  color: transparent;
+  font-weight: 400;
+}
+
+.intro-spinner {
+  animation:
+    intro-fade-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) 1.42s forwards,
+    intro-bloom 1.2s ease-out 1.56s infinite;
+  height: 46px;
+  opacity: 0;
+  position: relative;
+  width: 46px;
+}
+
+.intro-spinner::before,
+.intro-spinner::after {
+  border: 2px solid transparent;
+  border-radius: 50%;
+  content: '';
+  inset: 0;
+  position: absolute;
+}
+
+.intro-spinner::before {
+  animation: spin 1s linear infinite;
+  border-right-color: var(--jelly-pink);
+  border-top-color: var(--jelly-blue);
+}
+
+.intro-spinner::after {
+  animation: spin 1.5s linear infinite reverse;
+  border-bottom-color: var(--jelly-purple);
+  border-left-color: var(--star-gold);
+  inset: 6px;
+}
+
+.intro-spinner span {
+  animation: intro-orbit 1.9s linear infinite;
+  background: var(--jelly-blue);
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgb(143 205 231 / 42%);
+  height: 5px;
+  left: 50%;
+  position: absolute;
+  top: -2px;
+  transform-origin: 0 25px;
+  width: 5px;
+}
+
+.intro-spinner span:nth-child(2) {
+  animation-delay: -0.63s;
+  background: var(--jelly-pink);
+}
+
+.intro-spinner span:nth-child(3) {
+  animation-delay: -1.26s;
+  background: var(--star-gold);
+}
+
+.intro-status {
+  animation: intro-fade-up 0.45s cubic-bezier(0.16, 1, 0.3, 1) 1.66s forwards;
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  opacity: 0;
+}
+
+.intro-status::after {
+  animation: loading-dots 1.5s steps(4, end) infinite;
+  content: '';
+}
+

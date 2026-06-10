@@ -1,0 +1,262 @@
+.trajectory-copy {
+  margin: -2rem 0 3rem;
+}
+
+.experience {
+  margin: 0 auto 8rem;
+  max-width: 800px;
+  padding-left: 4rem;
+  position: relative;
+}
+
+.exp-line {
+  background:
+    radial-gradient(circle at 50% 18px, rgb(143 205 231 / 85%) 0 3px, transparent 4px),
+    radial-gradient(circle at 50% calc(100% - 18px), rgb(187 169 223 / 70%) 0 3px, transparent 4px),
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgb(143 205 231 / 52%) 8%,
+      rgb(238 183 213 / 48%) 48%,
+      rgb(187 169 223 / 42%) 78%,
+      transparent
+    );
+  border-radius: 2px;
+  bottom: 0;
+  left: 19px;
+  opacity: 0.82;
+  position: absolute;
+  top: 0;
+  width: 2px;
+}
+
+.exp-item {
+  margin-bottom: 4rem;
+  position: relative;
+}
+
+.exp-item::before {
+  background:
+    linear-gradient(135deg, rgb(143 205 231 / 30%), rgb(238 183 213 / 22%)),
+    linear-gradient(45deg, transparent 32%, rgb(217 196 248 / 22%) 32% 48%, transparent 48%);
+  clip-path: polygon(8% 0, 100% 18%, 82% 100%, 0 76%);
+  content: '';
+  filter: saturate(1.08);
+  height: 74%;
+  left: 7.5rem;
+  opacity: 0.62;
+  pointer-events: none;
+  position: absolute;
+  top: 14%;
+  transform: rotate(-4deg);
+  width: min(30rem, 72%);
+  z-index: -1;
+}
+
+.exp-item:nth-child(3n)::before {
+  background:
+    linear-gradient(135deg, rgb(187 169 223 / 30%), rgb(143 205 231 / 22%)),
+    linear-gradient(45deg, transparent 28%, rgb(238 183 213 / 20%) 28% 46%, transparent 46%);
+  clip-path: polygon(14% 4%, 92% 0, 100% 82%, 30% 100%, 0 46%);
+  transform: rotate(5deg);
+}
+
+.exp-item:last-child {
+  margin-bottom: 0;
+}
+
+.exp-node {
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: rgb(248 251 252 / 78%);
+  border: 1px solid rgb(255 255 255 / 74%);
+  border-radius: 50%;
+  box-shadow: 0 10px 24px rgb(93 135 154 / 12%);
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  left: -4rem;
+  position: absolute;
+  top: 4px;
+  width: 40px;
+  z-index: 2;
+}
+
+.exp-content {
+  --exp-glass-radius: 20px;
+  --exp-glass-accent-a: rgb(174 225 249 / 12%);
+  --exp-glass-accent-b: rgb(248 205 230 / 10%);
+  --exp-glass-accent-c: rgb(217 196 248 / 9%);
+  --exp-glass-angle: 128deg;
+  --exp-prism-angle: 58deg;
+  --exp-prism-x: 50%;
+  --exp-prism-y: 50%;
+  -webkit-backdrop-filter: blur(7px) saturate(1.28) contrast(1.02);
+  backdrop-filter: blur(7px) saturate(1.28) contrast(1.02);
+  background: rgb(255 255 255 / 0.8%);
+  border: 1px solid transparent;
+  border-radius: var(--exp-glass-radius);
+  box-shadow:
+    0 20px 54px rgb(61 57 64 / 7%),
+    inset 0 1px 0 rgb(255 255 255 / 28%),
+    inset 0 -1px 0 rgb(61 57 64 / 8%);
+  isolation: isolate;
+  max-width: 680px;
+  overflow: hidden;
+  padding: 1.15rem 1.25rem 1.2rem;
+  position: relative;
+}
+
+.exp-content::before {
+  background:
+    linear-gradient(
+      var(--exp-glass-angle),
+      rgb(255 255 255 / 30%) 0%,
+      var(--exp-glass-accent-a) 18%,
+      rgb(255 255 255 / 8%) 34%,
+      var(--exp-glass-accent-b) 58%,
+      rgb(61 57 64 / 8%) 78%,
+      var(--exp-glass-accent-c) 100%
+    ),
+    linear-gradient(var(--exp-prism-angle), transparent 0 38%, rgb(255 255 255 / 20%) 46%, transparent 58%);
+  border-radius: inherit;
+  content: '';
+  inset: 0;
+  opacity: 0.78;
+  pointer-events: none;
+  position: absolute;
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  padding: 1.4px;
+  z-index: 0;
+}
+
+.exp-content::after {
+  background:
+    radial-gradient(circle at var(--exp-prism-x) var(--exp-prism-y), rgb(255 255 255 / 7%), transparent 16%),
+    conic-gradient(from 160deg at var(--exp-prism-x) var(--exp-prism-y), transparent 0deg, var(--exp-glass-accent-a) 54deg, transparent 90deg, var(--exp-glass-accent-b) 160deg, transparent 212deg, var(--exp-glass-accent-c) 286deg, transparent 360deg);
+  border-radius: calc(var(--exp-glass-radius) - 2px);
+  content: '';
+  inset: 1px;
+  opacity: 0.16;
+  pointer-events: none;
+  position: absolute;
+  z-index: 0;
+}
+
+.exp-content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.exp-item-current .exp-content {
+  --exp-glass-accent-a: rgb(174 225 249 / 14%);
+  --exp-glass-accent-b: rgb(248 205 230 / 11%);
+  --exp-glass-accent-c: rgb(217 196 248 / 10%);
+  background: rgb(255 255 255 / 1%);
+  box-shadow:
+    0 22px 58px rgb(61 57 64 / 8%),
+    inset 0 1px 0 rgb(255 255 255 / 32%),
+    inset 0 -1px 0 rgb(61 57 64 / 8%),
+    0 0 24px rgb(174 225 249 / 9%);
+}
+
+.exp-item:nth-child(3n + 1) .exp-content {
+  --exp-glass-angle: 132deg;
+  --exp-prism-angle: 54deg;
+  --exp-prism-x: 38%;
+  --exp-prism-y: 44%;
+}
+
+.exp-item:nth-child(3n + 2) .exp-content {
+  --exp-glass-accent-a: rgb(248 205 230 / 12%);
+  --exp-glass-accent-b: rgb(236 216 162 / 10%);
+  --exp-glass-accent-c: rgb(174 225 249 / 10%);
+  --exp-glass-angle: 154deg;
+  --exp-prism-angle: 72deg;
+  --exp-prism-x: 68%;
+  --exp-prism-y: 36%;
+}
+
+.exp-item:nth-child(3n) .exp-content {
+  --exp-glass-accent-a: rgb(217 196 248 / 12%);
+  --exp-glass-accent-b: rgb(174 225 249 / 10%);
+  --exp-glass-accent-c: rgb(248 205 230 / 10%);
+  --exp-glass-angle: 118deg;
+  --exp-prism-angle: 43deg;
+  --exp-prism-x: 46%;
+  --exp-prism-y: 64%;
+}
+
+.exp-date {
+  color: var(--ink-light);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.exp-role {
+  color: var(--ink);
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1.15;
+  margin-bottom: 0.5rem;
+}
+
+.exp-company {
+  background: var(--glass-bg);
+  border: 1px solid var(--jelly-pink);
+  border-radius: var(--radius-pill);
+  color: var(--ink);
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  padding: 0.2rem 0.8rem;
+}
+
+.exp-desc {
+  color: var(--ink-light);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  max-width: 610px;
+}
+
+.exp-bullets {
+  color: rgb(61 57 64 / 78%);
+  display: grid;
+  font-size: 0.9rem;
+  gap: 0.42rem;
+  line-height: 1.45;
+  list-style: none;
+  margin: 0.95rem 0 0;
+  padding: 0;
+}
+
+.exp-bullets li {
+  padding-left: 1.05rem;
+  position: relative;
+}
+
+.exp-bullets li::before {
+  background: linear-gradient(135deg, var(--jelly-blue), var(--jelly-purple));
+  border-radius: 50%;
+  content: '';
+  height: 0.34rem;
+  left: 0;
+  position: absolute;
+  top: 0.6em;
+  width: 0.34rem;
+}
+
+.exp-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1rem;
+}
