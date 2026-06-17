@@ -1,0 +1,51 @@
+.ui-typing-animation {
+  align-items: baseline;
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.ui-typing-animation-text {
+  display: inline-block;
+}
+
+.ui-typing-animation-cursor {
+  background: currentcolor;
+  display: inline-block;
+  flex: 0 0 auto;
+  margin-left: 0.08em;
+}
+
+.ui-typing-animation-cursor.is-line {
+  border-radius: 999px;
+  height: 1.08em;
+  transform: translateY(0.12em);
+  width: 1px;
+}
+
+.ui-typing-animation-cursor.is-block {
+  height: 0.92em;
+  transform: translateY(0.12em);
+  width: 0.52em;
+}
+
+.ui-typing-animation-cursor.is-underscore {
+  height: 1px;
+  transform: translateY(0.08em);
+  width: 0.65em;
+}
+
+.ui-typing-animation-cursor.is-blinking {
+  animation: typing-caret-blink 0.78s steps(1, end) infinite;
+}
+
+@keyframes typing-caret-blink {
+  0%,
+  48% {
+    opacity: 1;
+  }
+
+  49%,
+  100% {
+    opacity: 0;
+  }
+}

@@ -41,43 +41,26 @@
 .intro-logo {
   display: inline-flex;
   justify-content: center;
-  order: -1;
-  padding: 0.15em 0.12em 0.18em 0;
   min-height: 1.6em;
   min-width: 10.8em;
+  order: -1;
+  padding: 0.15em 0.12em 0.18em 0;
 }
 
-.intro-cursor {
-  animation:
-    intro-caret-blink 0.72s steps(1, end) 0.15s infinite,
-    intro-caret-out 0.22s ease 0.95s forwards;
-  align-self: center;
-  background: linear-gradient(180deg, var(--jelly-blue), var(--jelly-purple));
-  border-radius: 999px;
-  height: 1.18em;
-  margin-left: 0.08em;
-  opacity: 0.8;
-  width: 1px;
-}
-
-.intro-logo-letter {
-  color: var(--ink);
-  display: inline-block;
+.intro-logo-text {
+  background: linear-gradient(45deg, var(--ink) 0 58%, #7abadd 66%, #e4a1c9 82%, #a38dd6 100%);
+  background-clip: text;
+  color: transparent;
   font-size: clamp(1.2rem, 3.2vw, 1.5rem);
   font-weight: 200;
   letter-spacing: 0.2em;
   text-transform: uppercase;
 }
 
-.intro-logo-letter.is-space {
-  width: 0.5em;
-}
-
-.intro-logo-letter.is-accent {
-  background: linear-gradient(45deg, #7abadd, #e4a1c9, #a38dd6);
-  background-clip: text;
-  color: transparent;
-  font-weight: 400;
+.intro-logo-text .ui-typing-animation-cursor {
+  background: linear-gradient(180deg, var(--jelly-blue), var(--jelly-purple));
+  opacity: 0.8;
+  transform: translateY(0.08em);
 }
 
 .intro-spinner {
@@ -148,4 +131,3 @@
   animation: loading-dots 1.5s steps(4, end) infinite;
   content: '';
 }
-

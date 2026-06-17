@@ -1,5 +1,5 @@
 import type { ElementType, ReactNode } from 'react'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { Download, Mail } from 'lucide-react'
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa6'
 import { getContactLink, type ContactLink } from '../data/portfolio'
@@ -8,9 +8,12 @@ import { getExternalLinkProps } from '../lib/links'
 import { HeroSignature } from './HeroSignature'
 import { SymbolIcon } from './Symbols'
 import { Badge } from './ui/badge'
+import { Highlighter } from './ui/highlighter'
 import { LinkButton } from './ui/link-button'
+import { TypingAnimation } from './ui/typing-animation'
 
 const heroFacts = ['Houston, TX', 'Open to work', 'Python / TypeScript / Rust / C#']
+const heroRoles = ['Fullstack Developer', 'Frontend Engineer', 'Backend Engineer', 'AI Engineer']
 
 type HeroAction = {
   icon: ElementType
@@ -68,18 +71,51 @@ export function Hero() {
         initial={{ opacity: 0, y: 22, filter: 'blur(8px)' }}
         transition={{ delay: 2.85, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p className="hero-kicker">HYUNWOO KIM / PORTFOLIO_V1.0.0</p>
+        <p className="hero-kicker">HYUNWOO KIM / PORTFOLIO_V1.0.1</p>
         <h1 className="hero-title">
           <HeroSignature />
         </h1>
         <div className="hero-subtitle">
           <SymbolIcon name="star" variant="star" />
-          Fullstack Developer
+          <TypingAnimation
+            className="hero-role-typing"
+            delay={3650}
+            deleteSpeed={45}
+            loop
+            pauseDelay={2300}
+            startOnView={false}
+            typeSpeed={75}
+            words={heroRoles}
+          />
           <SymbolIcon name="clover" variant="clover" />
         </div>
         <p className="hero-bio">
-          I build polished web apps, developer tools, and automation-heavy software across
-          TypeScript, Python, Rust, and C#. Previously SDE at AWS.
+          I build{' '}
+          <Highlighter
+            action="highlight"
+            animationDuration={850}
+            color="#bfe9f7"
+            isView
+            padding={4}
+            showDelay={3650}
+            strokeWidth={1.8}
+          >
+            polished web apps
+          </Highlighter>
+          , developer tools, and automation-heavy software across TypeScript, Python, Rust, and C#.
+          Previously{' '}
+          <Highlighter
+            action="underline"
+            animationDuration={750}
+            color="#b99cf4"
+            isView
+            padding={3}
+            showDelay={4450}
+            strokeWidth={2}
+          >
+            SDE at AWS
+          </Highlighter>
+          .
         </p>
         <div className="hero-actions" aria-label="Profile actions">
           {heroActions.map(({ icon: Icon, label, link, variant = 'secondary' }) => {

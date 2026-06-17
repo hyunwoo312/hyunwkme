@@ -6,7 +6,7 @@ import {
   type CSSProperties,
   type KeyboardEvent,
 } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'motion/react'
 import { ExternalLink } from 'lucide-react'
 import { FaGithub } from 'react-icons/fa6'
 import { projects, type Project, type ProjectVisualType } from '../data/portfolio'

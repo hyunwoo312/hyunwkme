@@ -87,6 +87,15 @@
   text-transform: uppercase;
 }
 
+.hero-role-typing {
+  justify-content: center;
+  min-width: 21ch;
+}
+
+.hero-role-typing .ui-typing-animation-cursor {
+  background: linear-gradient(180deg, var(--jelly-blue), var(--jelly-purple));
+}
+
 .hero-bio {
   color: var(--ink-light);
   font-size: clamp(1rem, 2vw, 1.15rem);
