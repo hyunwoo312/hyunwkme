@@ -29,6 +29,7 @@ export type ProjectStatus = 'archived' | 'incoming' | 'live' | 'released'
 export type Project = {
   className: `pc-${number}`
   featured?: boolean
+  icon?: string
   id: string
   image?: {
     alt: string
@@ -109,31 +110,32 @@ export function getContactLink(type: ContactLinkType): ContactLink {
 
 export const projects = [
   {
-    id: 'mira',
-    title: 'Mira',
+    id: 'lux',
+    title: 'Lux',
     summary:
-      'A Chrome extension that keeps applicant profiles local and fills repetitive ATS forms in one click.',
+      'A local-first new tab dashboard extension with a drag-and-drop widget grid, glassmorphism theming, and optional account widgets.',
     details:
-      'Built for job seekers tired of retyping the same answers across Ashby, Greenhouse, Lever, Workday, and iCIMS. Mira combines page scanning, local profile storage, document handling, application history, and an in-browser ML classifier to handle messy form fields without servers, accounts, telemetry, or API keys.',
-    role: 'Job application automation',
-    version: 'v0.3.1',
+      'A new tab dashboard for Chrome and Brave that replaces the default page with a grid of widgets you arrange, drag, and resize — each on its own Glass or Solid surface. Ships Tasks, Quick Access, Notes, Image, Weather, Calendar (Google & Outlook), Spotify, GitHub, and AniList widgets under a light and dark glassmorphism theme. Local-first: dashboard data stays in the browser with no Lux account and no telemetry, and account widgets connect over OAuth only when you opt in.',
+    role: 'Local-first new tab dashboard',
+    version: 'v1.0.0',
     status: 'live',
-    tags: ['TypeScript', 'Chrome MV3', 'ONNX'],
+    tags: ['TypeScript', 'React 19', 'Chrome Extension'],
     className: 'pc-1',
     featured: true,
+    icon: '/projects/lux-icon.png',
     links: {
-      github: 'https://github.com/hyunwoo312/mira',
-      store: 'https://chromewebstore.google.com/detail/mira/nmanfejonnmcnldcpbjhcglbbhdglbpa',
+      github: 'https://github.com/hyunwoo312/lux',
+      store: 'https://chromewebstore.google.com/detail/lux/kmfabjnibncbooljgbkinkfddapmfcna',
     },
     linkLabels: {
       store: 'Chrome Web Store',
     },
     image: {
-      alt: 'Mira browser extension filling a job application form with a side panel and floating progress overlay.',
-      height: 800,
+      alt: 'Lux new tab dashboard with a custom wallpaper — glassmorphism widgets including a photo, a now-playing card, quick access shortcuts, tasks, a clock, and a calendar — over an illustrated sunset cityscape.',
+      height: 1439,
       objectPosition: 'center top',
-      src: '/projects/mira-hero.png',
-      width: 1280,
+      src: '/projects/lux-hero.png',
+      width: 2560,
     },
     visual: 'interface',
   },
@@ -150,6 +152,7 @@ export const projects = [
     tags: ['C#', 'Flow Launcher', 'Steam API'],
     className: 'pc-2',
     featured: true,
+    icon: '/projects/steam-launcher-icon.png',
     links: {
       github: 'https://github.com/hyunwoo312/steam-launcher',
       store:
@@ -168,17 +171,34 @@ export const projects = [
     visual: 'wave',
   },
   {
-    id: 'featured-slot-incoming',
-    title: 'Next Feature Slot',
+    id: 'mira',
+    title: 'Mira',
     summary:
-      'Reserved for the next project with enough utility, polish, and weirdness to deserve the large-card treatment.',
-    role: 'Next polished build',
-    version: 'vNext',
-    status: 'incoming',
-    tags: ['In Progress'],
+      'A Chrome extension that keeps applicant profiles local and fills repetitive ATS forms in one click.',
+    details:
+      'Built for job seekers tired of retyping the same answers across Ashby, Greenhouse, Lever, Workday, and iCIMS. Mira combines page scanning, local profile storage, document handling, application history, and an in-browser ML classifier to handle messy form fields without servers, accounts, telemetry, or API keys.',
+    role: 'Job application automation',
+    version: 'v0.3.1',
+    status: 'live',
+    tags: ['TypeScript', 'Chrome Extension', 'ONNX'],
     className: 'pc-3',
     featured: true,
-    visual: 'wave',
+    icon: '/projects/mira-icon.png',
+    links: {
+      github: 'https://github.com/hyunwoo312/mira',
+      store: 'https://chromewebstore.google.com/detail/mira/nmanfejonnmcnldcpbjhcglbbhdglbpa',
+    },
+    linkLabels: {
+      store: 'Chrome Web Store',
+    },
+    image: {
+      alt: 'Mira browser extension filling a job application form with a side panel and floating progress overlay.',
+      height: 800,
+      objectPosition: 'center top',
+      src: '/projects/mira-hero.png',
+      width: 1280,
+    },
+    visual: 'interface',
   },
   {
     id: 'riot-launcher',
@@ -201,7 +221,7 @@ export const projects = [
       'The archived 3D portfolio: a handcrafted Blender room with interactive objects and bookshelf project discovery.',
     role: 'Creative frontend',
     status: 'archived',
-    tags: ['React Three Fiber', 'Three.js', 'GSAP'],
+    tags: ['TypeScript', 'Three.js', 'GSAP'],
     className: 'pc-5',
     links: {
       demo: 'https://3d-archive.hyunwk.me',

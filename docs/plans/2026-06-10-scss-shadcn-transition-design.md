@@ -1,5 +1,12 @@
 # SCSS and Shadcn-Style Transition Design
 
+> **Superseded (2026-06-19)** by
+> `docs/plans/2026-06-19-tailwind-shadcn-migration-plan.md`. This document's
+> core decision — adopt a shadcn-*style* SCSS layer **without** Tailwind — was
+> reversed. The project now adopts real Tailwind v4 + shadcn/ui. Kept for
+> history; the structured SCSS folders it produced are the migration's starting
+> point.
+
 Date: 2026-06-10
 
 ## Goal

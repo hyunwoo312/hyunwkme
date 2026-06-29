@@ -1,4 +1,4 @@
-import './styles/index.scss'
+import './styles/index.css'
 import { BackgroundMesh } from './components/BackgroundMesh'
 import { CyreneCorner } from './components/CyreneCorner'
 import { ExperienceTimeline } from './components/ExperienceTimeline'

@@ -1,6 +1,9 @@
 {
   "compilerOptions": {
     "allowImportingTsExtensions": true,
+    "paths": {
+      "@/*": ["./src/*"]
+    },
     "isolatedModules": true,
     "jsx": "react-jsx",
     "lib": ["DOM", "DOM.Iterable", "ES2022"],

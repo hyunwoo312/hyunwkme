@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+/*
+ * Tailwind v4 without Preflight during the mechanical migration: the site
+ * already ships its own reset (src/index.css, base/_document.css), and adding
+ * Tailwind's opinionated reset here would change rendering. Preflight is
+ * adopted deliberately in the shadcn phase, which expects it. Site CSS stays
+ * unlayered so it remains authoritative over utilities until intentionally
+ * migrated.
+ */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+@import './abstracts/_tokens.css';
+@import './base/_document.css';
+@import './components/_intro.css';
+@import './components/_symbols.css';
+@import './components/_background.css';
+@import './components/_nav.css';
+@import './layout.css';
+@import './components/_hero.css';
+@import './components/_projects.css';
+@import './components/_trajectory.css';
+@import './components/_footer.css';
+@import './animations.css';
+@import './ui/_highlighter.css';
+@import './ui/_typing-animation.css';
+@import './responsive.css';
+
+/*
+ * Design tokens. Naming follows Tailwind v4 namespaces so each token also
+ * generates a utility: --color-* -> bg-/text-/border-, --font-* -> font-,
+ * --radius-* -> rounded-. Values are unchanged from the previous :root block.
+ * Legacy names (--bg-base, --ink, ...) are kept as aliases in
+ * abstracts/_tokens.css so existing CSS keeps resolving.
+ */
+@theme {
+  --color-base: #e8edf1;
+  --color-ink: #3d3940;
+  --color-ink-light: #5a565d;
+  --color-jelly-blue: #8fcde7;
+  --color-jelly-pink: #eeb7d5;
+  --color-jelly-purple: #bba9df;
+  --color-star-gold: #d9c485;
+  --color-glass-bg: rgb(247 249 249 / 52%);
+  --color-glass-border: rgb(255 255 255 / 68%);
+  --font-display: 'Outfit', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  --radius-pill: 999px;
+  --radius-soft: 24px;
+
+  /* Component accent/surface colors (used by the local UI primitives). */
+  --color-ink-deep: #2f2b32;
+  --color-surface: #f8f9f9;
+  --color-paper: #f8faf9;
+  --color-accent: #927cc8;
+  --color-accent-nav: #9a84cf;
+
+  /* Primitive type scale. Badge sizes bake line-height: 1 so they stay tight
+     regardless of tailwind-merge ordering. */
+  --text-tag: 0.6rem;
+  --text-tag--line-height: 1;
+  --text-chip: 0.7rem;
+  --text-chip--line-height: 1;
+  --text-action: 0.75rem;
+  --text-nav: 0.85rem;
+
+  /* Primitive elevation. */
+  --shadow-link: 0 8px 22px rgb(141 174 190 / 10%);
+  --shadow-link-hover: 0 16px 32px rgb(141 174 190 / 18%);
+  --shadow-link-primary: 0 14px 30px rgb(61 57 64 / 14%);
+  --shadow-link-primary-hover: 0 18px 34px rgb(61 57 64 / 20%);
+  --shadow-nav: 0 2px 10px rgb(209 195 238 / 40%);
+  --shadow-project: 0 8px 18px rgb(146 124 200 / 12%);
+}
+
+/*
+ * shadcn/ui variable contract, mapped onto the site palette so shadcn
+ * primitives inherit the existing look instead of shadcn's gray defaults.
+ * Light-only: the site has no dark mode, so .dark, chart-*, and sidebar-*
+ * tokens are intentionally omitted (add them if those features arrive).
+ * These are inert until a shadcn component consumes them.
+ */
+:root {
+  --radius: 0.75rem;
+  --background: var(--color-base);
+  --foreground: var(--color-ink);
+  --card: var(--color-glass-bg);
+  --card-foreground: var(--color-ink);
+  --popover: #f7f9f9;
+  --popover-foreground: var(--color-ink);
+  --primary: var(--color-ink);
+  --primary-foreground: var(--color-base);
+  --secondary: var(--color-glass-bg);
+  --secondary-foreground: var(--color-ink);
+  --muted: var(--color-glass-bg);
+  --muted-foreground: var(--color-ink-light);
+  --accent: var(--color-jelly-blue);
+  --accent-foreground: var(--color-ink);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: var(--color-glass-border);
+  --input: var(--color-glass-border);
+  --ring: var(--color-jelly-blue);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+/*
+ * Minimal element reset that shadcn primitives rely on. Lives in @layer base
+ * so site CSS (unlayered) and utilities both override it. Visually inert:
+ * 0-width borders are invisible; this only makes `border` utilities resolve to
+ * `solid` instead of the UA default.
+ */
+@layer base {
+  *,
+  ::before,
+  ::after {
+    box-sizing: border-box;
+    border: 0 solid;
+    margin: 0;
+    padding: 0;
+  }
+
+  button,
+  input,
+  textarea,
+  select {
+    font: inherit;
+  }
+
+  img,
+  svg {
+    max-width: 100%;
+  }
+}

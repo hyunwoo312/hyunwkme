@@ -135,7 +135,11 @@ export function Hero() {
         </div>
         <div className="hero-facts" aria-label="Profile details">
           {heroFacts.map((fact) => (
-            <Badge key={fact} variant="pill">
+            <Badge
+              className="border-white/60 bg-white/40 text-ink-light max-md:text-tag"
+              key={fact}
+              variant="pill"
+            >
               {fact}
             </Badge>
           ))}

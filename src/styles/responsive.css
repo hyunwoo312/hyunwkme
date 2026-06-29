@@ -121,18 +121,22 @@
     width: fit-content;
   }
 
-  .floating-nav .ui-link-button,
-  .floating-nav .ui-button {
+  .floating-nav a {
     font-size: 0.84rem;
-    min-height: 2.45rem;
+    min-height: 2.5rem;
     padding: 0.58rem 0.72rem;
   }
 
-  .nav-social .ui-link-button {
-    flex: 0 0 2.45rem;
-    height: 2.45rem;
+  .nav-primary button {
+    min-height: 2.5rem;
+    padding: 0.6rem 0.7rem;
+  }
+
+  .nav-social a {
+    flex: 0 0 2.5rem;
+    height: 2.5rem;
     padding: 0;
-    width: 2.45rem;
+    width: 2.5rem;
   }
 
   .nav-social svg {
@@ -207,7 +211,7 @@
     margin-top: 1.35rem;
   }
 
-  .hero-actions .ui-link-button {
+  .hero-actions a {
     font-size: 0.68rem;
     padding: 0.62rem 0.78rem;
   }
@@ -215,11 +219,6 @@
   .hero-facts {
     display: flex;
     gap: 0.42rem;
-  }
-
-  .hero-facts .ui-badge {
-    font-size: 0.6rem;
-    padding: 0.3rem 0.58rem;
   }
 
   .section-header {
@@ -348,10 +347,9 @@
     padding: 0.38rem;
   }
 
-  .floating-nav .ui-link-button,
-  .floating-nav .ui-button {
+  .floating-nav a {
     font-size: 0.78rem;
-    min-height: 2.28rem;
+    min-height: 2.25rem;
     padding-inline: 0.52rem;
   }
 
@@ -359,14 +357,20 @@
     gap: 0.12rem;
   }
 
+  .nav-primary button {
+    font-size: var(--text-action);
+    min-height: 2.25rem;
+    padding-inline: 0.5rem;
+  }
+
   .nav-social {
     gap: 0.1rem;
   }
 
-  .nav-social .ui-link-button {
-    flex-basis: 2.28rem;
-    height: 2.28rem;
-    width: 2.28rem;
+  .nav-social a {
+    flex-basis: 2.25rem;
+    height: 2.25rem;
+    width: 2.25rem;
   }
 
   .nav-social svg {
@@ -387,7 +391,7 @@
     width: 100%;
   }
 
-  .hero-actions .ui-link-button {
+  .hero-actions a {
     justify-content: center;
   }
 
@@ -427,7 +431,7 @@
   }
 
   .project-card-expanded span,
-  .project-detail-links .ui-link-button {
+  .project-detail-links a {
     font-size: 0.58rem;
   }
 
@@ -435,7 +439,7 @@
     gap: 0.34rem;
   }
 
-  .project-detail-links .ui-link-button {
+  .project-detail-links a {
     padding: 0.28rem 0.5rem;
   }
 
