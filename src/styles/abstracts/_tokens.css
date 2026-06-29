@@ -1,0 +1,17 @@
+/*
+ * Legacy token aliases -> Tailwind @theme tokens (defined in index.css).
+ * Existing CSS references these names; @theme is the single source of truth
+ * for the values. --font-* and --radius-* already match the @theme names, so
+ * they resolve directly and need no alias here.
+ */
+:root {
+  --bg-base: var(--color-base);
+  --ink: var(--color-ink);
+  --ink-light: var(--color-ink-light);
+  --jelly-blue: var(--color-jelly-blue);
+  --jelly-pink: var(--color-jelly-pink);
+  --jelly-purple: var(--color-jelly-purple);
+  --star-gold: var(--color-star-gold);
+  --glass-bg: var(--color-glass-bg);
+  --glass-border: var(--color-glass-border);
+}

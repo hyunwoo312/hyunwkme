@@ -223,9 +223,23 @@ function ProjectCard({ activating, expanded, index, onToggle, project }: Project
             <div className="project-eyebrow">
               {project.version ? <span>{project.version}</span> : null}
             </div>
-            <h3 className="meta-title" id={cardId}>
-              {project.title}
-            </h3>
+            <div className="meta-title-row">
+              {project.icon ? (
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  className="project-icon"
+                  decoding="async"
+                  height={24}
+                  loading="lazy"
+                  src={project.icon}
+                  width={24}
+                />
+              ) : null}
+              <h3 className="meta-title" id={cardId}>
+                {project.title}
+              </h3>
+            </div>
             <p className="project-summary" id={`${cardId}-summary`}>
               {project.summary}
             </p>
@@ -288,7 +302,11 @@ function ProjectPlateList({ projects }: ProjectPlateListProps) {
               <span className="project-plate-summary">{project.summary}</span>
               <span className="project-plate-tags">
                 {project.tags.map((tag) => (
-                  <Badge key={tag} variant="square">
+                  <Badge
+                    className="text-chip tracking-wider text-ink-light"
+                    key={tag}
+                    variant="square"
+                  >
                     {tag}
                   </Badge>
                 ))}

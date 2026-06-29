@@ -120,13 +120,6 @@
   margin-top: 1.1rem;
 }
 
-.hero-facts .ui-badge-pill {
-  background: rgb(255 255 255 / 38%);
-  border-color: rgb(255 255 255 / 62%);
-  color: var(--ink-light);
-  letter-spacing: 0.05em;
-  padding: 0.34rem 0.7rem;
-}
 
 .annotation {
   align-items: center;

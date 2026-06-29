@@ -448,6 +448,25 @@
   text-transform: none;
 }
 
+.meta-title-row {
+  align-items: center;
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.meta-title-row .meta-title {
+  margin-bottom: 0;
+}
+
+.project-icon {
+  display: block;
+  flex-shrink: 0;
+  height: 1.4rem;
+  object-fit: contain;
+  width: 1.4rem;
+}
+
 .project-summary {
   color: rgb(61 57 64 / 88%);
   display: -webkit-box;
@@ -663,14 +682,6 @@
   margin-top: 0.25rem;
 }
 
-.project-plate-tags .ui-badge-square {
-  background: rgb(255 255 255 / 34%);
-  border-color: rgb(61 57 64 / 14%);
-  color: rgb(90 86 93 / 78%);
-  font-size: 0.64rem;
-  letter-spacing: 0.04em;
-  padding: 0.12rem 0.42rem;
-}
 
 .project-plate-links {
   align-items: stretch;
@@ -683,13 +694,13 @@
   min-width: 4.9rem;
 }
 
-.project-plate-links .ui-link-button-project {
+.project-plate-links a {
   background: rgb(255 255 255 / 36%);
   color: rgb(90 86 93 / 82%);
   gap: 0.32rem;
 }
 
-.project-plate-links .ui-link-button-project:hover,
-.project-plate-links .ui-link-button-project:focus-visible {
+.project-plate-links a:hover,
+.project-plate-links a:focus-visible {
   background: rgb(255 255 255 / 64%);
 }

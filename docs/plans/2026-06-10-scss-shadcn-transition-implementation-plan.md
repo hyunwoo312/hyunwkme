@@ -1,5 +1,10 @@
 # SCSS and Shadcn-Style Transition Implementation Plan
 
+> **Superseded (2026-06-19)** by
+> `docs/plans/2026-06-19-tailwind-shadcn-migration-plan.md`, which adopts real
+> Tailwind v4 + shadcn/ui. This plan (SCSS, no Tailwind) was implemented and is
+> the starting point for the new one. Kept for history.
+
 > **For agentic workers:** implement this plan task by task. Use checkbox (`- [ ]`) syntax for tracking. Keep each task buildable, focused, and independently reviewable.
 
 **Goal:** Convert the portfolio styling architecture to SCSS and introduce a small shadcn-style local primitive layer without changing the site's visual design, behavior, deployment shape, or content.

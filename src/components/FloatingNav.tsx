@@ -19,7 +19,11 @@ export function FloatingNav() {
     <nav className="floating-nav" aria-label="Primary navigation">
       <div className="nav-section nav-primary">
         {navItems.map((item) => (
-          <Button key={item.targetId} onClick={() => scrollToSection(item.targetId)} variant="nav">
+          <Button
+            key={item.targetId}
+            onClick={() => scrollToSection(item.targetId)}
+            variant="nav"
+          >
             <span className="nav-label-full">{item.label}</span>
             <span className="nav-label-short">{item.shortLabel}</span>
           </Button>
@@ -36,9 +40,7 @@ export function FloatingNav() {
               download={item.download || undefined}
               href={item.href}
               icon={Icon}
-              iconOnly
               key={item.href}
-              size="icon"
               variant="nav"
               {...getExternalLinkProps(item)}
             >
