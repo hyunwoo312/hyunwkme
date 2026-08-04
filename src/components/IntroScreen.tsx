@@ -10,7 +10,7 @@ export function IntroScreen() {
         <GeometricMesh className="intro-geo-lines" />
       </div>
       <div className="intro-content">
-        <div className="intro-version">PORTFOLIO_V1.0.1</div>
+        <div className="intro-version">PORTFOLIO_V1.0.2</div>
         <div className="intro-logo" aria-label="Hyunwoo Kim">
           <TypingAnimation
             className="intro-logo-text"

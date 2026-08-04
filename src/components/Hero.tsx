@@ -12,7 +12,7 @@ import { Highlighter } from './ui/highlighter'
 import { LinkButton } from './ui/link-button'
 import { TypingAnimation } from './ui/typing-animation'
 
-const heroFacts = ['Houston, TX', 'Open to work', 'Python / TypeScript / Rust / C#']
+const heroFacts = ['Houston, TX', 'Open to work', 'TypeScript / Python / Java / C#']
 const heroRoles = ['Fullstack Developer', 'Frontend Engineer', 'Backend Engineer', 'AI Engineer']
 
 type HeroAction = {
@@ -71,7 +71,7 @@ export function Hero() {
         initial={{ opacity: 0, y: 22, filter: 'blur(8px)' }}
         transition={{ delay: 2.85, duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
       >
-        <p className="hero-kicker">HYUNWOO KIM / PORTFOLIO_V1.0.1</p>
+        <p className="hero-kicker">HYUNWOO KIM / PORTFOLIO_V1.0.2</p>
         <h1 className="hero-title">
           <HeroSignature />
         </h1>
@@ -102,7 +102,7 @@ export function Hero() {
           >
             polished web apps
           </Highlighter>
-          , developer tools, and automation-heavy software across TypeScript, Python, Rust, and C#.
+          , developer tools, and automation-heavy software across TypeScript, Python, Java, and C#.
           Previously{' '}
           <Highlighter
             action="underline"
@@ -152,7 +152,7 @@ export function Hero() {
       <Annotation className="a-2" lineWidth="150px">
         <span>*</span> BASED_IN_HOUSTON_TEXAS
       </Annotation>
-      <Annotation className="a-3">PY / TS / RUST / C#</Annotation>
+      <Annotation className="a-3">TS / PY / JAVA / C#</Annotation>
     </section>
   )
 }

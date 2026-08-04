@@ -244,8 +244,8 @@ export const projects = [
 
 export const timeline = [
   {
-    date: 'CURRENT',
-    role: 'Independent Developer',
+    date: 'AUG 2023 - PRESENT',
+    role: 'Independent Software Engineer',
     company: 'Open to work',
     icon: 'clover',
     isCurrent: true,
@@ -256,7 +256,7 @@ export const timeline = [
       'Writing production-minded code across fullstack and systems contexts.',
       'Exploring AI-assisted workflows without losing engineering rigor.',
     ],
-    tags: ['TypeScript', 'Python', 'Rust', 'C#'],
+    tags: ['TypeScript', 'React', 'Python', 'C#'],
   },
   {
     date: 'JUN 2022 - AUG 2023',
